@@ -1,0 +1,61 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+legend {
+  color: whitesmoke;
+}
+
+.form-floating input {
+  border: none;
+  /* background-color: rgba(96, 64, 139, 1); */
+  /* background-color: rgb(3, 5, 7); */
+  background-color: rgb(26, 31, 35);
+  /* background-color: rgb(210, 175, 127); */
+  /* border-bottom: 2px solid rgba(20, 189, 172, 1); */
+  /* box-shadow: 0px 6px 8px -2px rgb(56, 66, 73); */
+}
+
+.form-floating label {
+  color: rgb(141, 141, 141);
+}
+
+.form-floating .player-1 {
+  border-bottom: 2px solid rgba(20, 189, 172, 1);
+  /* box-shadow: 0px 6px 8px -2px rgb(65, 90, 87); */
+}
+
+.form-floating .player-2 {
+  border-bottom: 2px solid rgb(210, 175, 127);
+}
+
+.form-floating .player-1:focus {
+  background-color: rgb(26, 31, 35);
+  box-shadow: 0px 6px 8px -2px rgb(65, 90, 87);
+}
+
+.form-floating .player-2:focus {
+  background-color: rgb(26, 31, 35);
+  box-shadow: 0px 6px 8px -2px rgb(124, 106, 81);
+}
+
+.start-btn button {
+  width: 20%;
+  border-radius: 8px;
+  padding: 6px;
+  background-color: rgba(20, 189, 172, 1);
+  border: none;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  transition: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.start-btn button:hover {
+  background-color: rgb(210, 175, 127);
+}

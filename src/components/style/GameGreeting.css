@@ -1,0 +1,26 @@
+h2 {
+  margin: 8px;
+}
+
+.greeting-div {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 100%;
+  border-right: 2px solid whitesmoke;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading h2 {
+  font-size: 3rem;
+  /* color: rgb(55, 223, 206); */
+  color: rgb(181, 253, 231);
+}
