@@ -6,8 +6,10 @@
 body {
   margin: 0;
   padding: 0;
+  /* font-family: "Rubik", sans-serif;
+  font-family: "Montserrat", sans-serif; */
   /* background-color: rgb(3, 5, 7); */
-  background-color: rgb(26, 31, 35);
+  /* background-color: rgb(26, 31, 35); */
   /* background-color: rgba(96, 64, 139, 1); */
   /* background-color: rgb(6, 61, 57); */
   /* background-color: rgb(118, 64, 139); */
@@ -19,6 +21,7 @@ body {
   display: flex;
   height: 100vh;
   width: 100%;
+  background-color: rgb(26, 31, 35);
 }
 
 .game-greeting {
@@ -35,4 +38,49 @@ body {
   width: 50%;
   justify-content: center;
   align-items: center;
+}
+
+/************** Game Window ***************/
+
+.game-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(176, 223, 218, 0.8);
+  background-color: rgb(210, 175, 127);
+  background-color: rgba(8, 76, 71, 1);
+  background-color: rgb(6, 61, 57);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 60%;
+  min-width: 500px;
+}
+
+.head-area {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  width: 100%;
+  background-color: rgb(3, 5, 7);
+}
+
+.game-area {
+  display: flex;
+  height: 60%;
+  width: 100%;
+  justify-content: center;
+  background-color: rgba(0, 168, 150, 0.8);
+  background-color: rgba(0, 168, 150, 0.8);
+}
+
+.footer-area {
+  height: 20%;
+  width: 100%;
+  background-color: rgb(3, 5, 7);
 }

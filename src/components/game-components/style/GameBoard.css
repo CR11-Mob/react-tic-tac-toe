@@ -1,0 +1,41 @@
+.game-grid {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  font-size: 5rem;
+  font-weight: 100;
+  margin: 15px 0px;
+}
+
+.game-grid > div {
+  display: flex;
+  height: 33.33%;
+  width: 100%;
+  /* border-bottom: 5px solid rgba(13, 161, 146, 1); */
+  border-bottom: 5px solid rgb(0, 218, 194);
+}
+
+.row-item {
+  display: flex;
+  height: 100%;
+  width: 33.33%;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 6rem;
+    font-weight: 300; */
+  /* color: rgba(48, 48, 48, 0.8); */
+}
+
+.game-grid > div :nth-child(even) {
+  /* border-left: 5px solid rgba(13, 161, 146, 1);
+  border-right: 5px solid rgba(13, 161, 146, 1); */
+  border-left: 5px solid rgb(0, 218, 194);
+  border-right: 5px solid rgb(0, 218, 194);
+}
+.game-grid > div :nth-last-child(1) {
+  border-right: none;
+}
+
+.game-grid :nth-last-child(1) {
+  border-bottom: none;
+}
