@@ -1,48 +1,39 @@
 import "./style/PlayerName.css";
-// import { useState } from "react";
 
 export default function PlayerName(props) {
-  const handleInputChange = (e) => {
+  const handleInputChange = (e, index) => {
     const { name, value } = e.target;
-    props.setPlayerName({
-      ...props.playerName,
-      [name]: value,
-    });
+    const playerNameCopy = [...props.playerName];
+    playerNameCopy[index][name] = value;
+    props.setPlayerName(playerNameCopy);
   };
+
   return (
-    <form>
+    <form key={"from"}>
       <fieldset>
         <legend>Enter Player Name</legend>
-        {/* <p style={{ color: "white" }}>{props.playerName.player-X}</p>
-        <p style={{ color: "white" }}>{props.playerName.player-O}</p> */}
-        <div className="form-floating mb-3">
-          <input
-            id="player-X-input"
-            name="player-X"
-            value={props.playerName["player-X"]}
-            className="form-control player-1"
-            autoComplete="off"
-            placeholder="X"
-            onChange={handleInputChange}
-          />
-          <label htmlFor="player-X-input">Player X</label>
-        </div>
 
-        <div className="form-floating mb-4">
-          <input
-            id="player-O-input"
-            name="player-O"
-            value={props.playerName["player-O"]}
-            className="form-control player-2"
-            autoComplete="off"
-            placeholder="O"
-            onChange={handleInputChange}
-          />
-          <label htmlFor="player-O-input">Player O</label>
-        </div>
+        {props.playerName.map((item, index) => (
+          <div className="form-floating mb-3">
+            <input
+              key={index}
+              id={`player-${index + 1}-input`}
+              name={`player-${index + 1}`}
+              value={item[`player-${index + 1}`]}
+              className={`form-control player-${index + 1}`}
+              autoComplete="off"
+              placeholder={index + 1 === 1 ? "X" : "O"}
+              onChange={(e) => handleInputChange(e, index)}
+            />
+            <label htmlFor="player-X-input">{`Player ${
+              index + 1 === 1 ? "X" : "O"
+            }`}</label>
+          </div>
+        ))}
 
         <div className="start-btn">
           <button
+            key={"start-btn"}
             onClick={() => {
               if (
                 props.playerName["player-X"] === "" &&

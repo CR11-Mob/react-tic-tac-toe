@@ -9,7 +9,10 @@ export default function PlayerStatus(props) {
         <select
           name={`gridSize-dropdown`}
           value={props.gridSize}
-          onChange={(e) => props.setGridSize(e.target.value)}
+          onChange={(e) => {
+            props.setGridSize(+e.target.value);
+            props.setIsGameOver(false);
+          }}
         >
           {gameGridSizeArr.map((item, index) => (
             <option key={index} name={item} value={item}>
@@ -19,23 +22,40 @@ export default function PlayerStatus(props) {
         </select>
       </div>
       <div className="player">
-        <div
-          className={props.playerTurn === "X" ? "active-X" : "default-X-player"}
-        >
-          <span>X</span>
-          <span>{props.playerName["player-X"]}</span>
-          <span>-</span>
-        </div>
-        <div
-          className={props.playerTurn === "O" ? "active-O" : "default-O-player"}
-        >
-          <span>O</span>
-          <span>{props.playerName["player-O"]}</span>
-          <span>-</span>
-        </div>
+        {props.playerName.map((item, index) => {
+          let activePlayerClass = "";
+
+          if (index === 0) {
+            activePlayerClass = "default-X-player";
+            if (props.playerTurn === "X") {
+              activePlayerClass = "active-X";
+            }
+            if (props.isGameOver) {
+              activePlayerClass = "default-X-player";
+            }
+          }
+
+          if (index === 1) {
+            activePlayerClass = "default-O-player";
+            if (props.playerTurn === "O") {
+              activePlayerClass = "active-O";
+            }
+            if (props.isGameOver) {
+              activePlayerClass = "default-O-player";
+            }
+          }
+
+          return (
+            <div className={activePlayerClass}>
+              <span>{index + 1 === 1 ? "X" : "O"}</span>
+              <span>{item[`player-${index + 1}`]}</span>
+              <span>{props.playerName[index].totalWin}</span>
+            </div>
+          );
+        })}
       </div>
       <div className="player-turn">
-        {props.playerName[`player-${props.playerTurn}`]}
+        {props.isGameOver ? "Game Over" : `${props.playerTurn} Turn`}
       </div>
     </>
   );

@@ -43,11 +43,13 @@ select {
 
 .default-X-player {
   border-bottom: 2px solid rgba(20, 189, 172, 1);
+  /* color: rgb(0, 236, 213); */
   border-radius: 8px;
 }
 
 .default-O-player {
   border-bottom: 2px solid rgb(210, 175, 127);
+  /* color: rgb(255, 159, 25); */
   border-radius: 8px;
 }
 
